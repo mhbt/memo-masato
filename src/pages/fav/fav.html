@@ -20,8 +20,8 @@
           </button>
       </ion-fab>
   <ion-list >
-      <ion-card margin-top *ngFor = "let memo of favs;let i = index" no-padding>
-          <ion-card-header class="date-small" color="primary" (click)= "navToMemoPage(i)">
+      <ion-card margin-top *ngFor = "let memo of favs;let i = index" no-padding color="primary">
+          <ion-card-header class="date-small"  (click)= "navToMemoPage(i)">
             <span float-left>{{memo.time}} </span>
             <span float-right>{{memo.date}}</span>
           </ion-card-header>

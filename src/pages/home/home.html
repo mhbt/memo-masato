@@ -21,15 +21,15 @@
           </button>
       </ion-fab>
   <ion-list >
-      <ion-card margin-top *ngFor = "let memo of memos;let i = index" no-padding>
-          <ion-card-header class="date-small" color="primary" (click)= "navToMemoPage(i)">
+      <ion-card margin-top *ngFor = "let memo of memos;let i = index" no-padding color="primary">
+          <ion-card-header class="date-small"  (click)= "navToMemoPage(i)">
             <span float-left>{{memo.time}} </span>
             <span float-right>{{memo.date}}</span>
           </ion-card-header>
-            <ion-card-content no-padding no-margin-top>
-                <ion-item-sliding >
+            <ion-card-content no-padding no-margin-top >
+                <ion-item-sliding color="primary">
                     <ion-item >
-                        <ion-grid margin-left-0>
+                        <ion-grid margin-left-0 color="primary">
                           <ion-row>
                             <ion-col col-11 (click)= "navToMemoPage(i)">
                                   <p>{{memo.memo.substr(0,30)}}...</p>
