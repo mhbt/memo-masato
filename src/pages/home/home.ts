@@ -18,15 +18,15 @@ export class HomePage {
     public alertCtrl: AlertController,
     public toastCtrl: ToastController
   ){} 
-  ionViewCanEnter(){
+  ionViewCanEnter(){}
+  ionViewWillEnter(){
     this.storage.loadMemos();
-    this.storage.loadArchieve();
     this.memos = this.storage.getMemos();
   }
   ionViewDidLoad(){
-    // this.storage.loadMemos();
-    // this.storage.loadArchieve();
-    // this.memos = this.storage.getMemos();
+    this.storage.loadMemos();
+    this.storage.loadArchieve();
+    this.memos = this.storage.getMemos();
   }
   addMemo(){
     let ctrl = this.alertCtrl.create({
