@@ -1,0 +1,43 @@
+<!--
+  Generated template for the MemoPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar  color="app">
+    <ion-title>Memo</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content >
+  <ion-card no-padding *ngIf="memo" >
+    <ion-card-content>
+      <ion-card-title color="primary" text-center>
+        <h2>{{memo.date}} {{memo.time}}</h2>
+        </ion-card-title>
+        <p>
+          {{memo.memo}}
+        </p>
+        <ion-grid no-padding>
+          <ion-row no-padding>
+            <ion-col col-6 text-left>
+                <button  float-left ion-button outline full ion-icon color="dark" *ngIf="!archiveFlag" (click)="toggleFavorite(memo.id)">
+                    <ion-icon *ngIf="memo.favorite"  name="ios-star" item-end large color="golden" ></ion-icon>
+                    <ion-icon *ngIf="!memo.favorite" name="ios-star-outline" item-end large color="golden" ></ion-icon>
+                </button>
+            </ion-col>
+            <ion-col col-6 text-right>
+                <button *ngIf="!archiveFlag" ion-button outline full ion-icon float-right (click)="archiveMemo(memo.id)" color="dark">
+                  <ion-icon name="trash"></ion-icon>
+                </button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

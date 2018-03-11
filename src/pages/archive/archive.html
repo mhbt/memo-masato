@@ -1,0 +1,38 @@
+
+<ion-header>
+
+  <ion-navbar color="app">
+    <ion-title>Archived Memos</ion-title>
+  </ion-navbar>
+
+</ion-header>
+<ion-content >
+  <ion-list *ngIf="archive">
+      <ion-card margin-top *ngFor = "let memo of archive; let i = index" no-padding>
+          <ion-card-header class="date-small" color="primary" (click)= "navToMemoPage(i)">
+            <span float-left>{{memo.time}} </span>
+            <span float-right>{{memo.date}} </span>
+          </ion-card-header>
+            <ion-card-content no-padding no-margin-top>
+                <ion-item-sliding >
+                    <ion-item >
+                        <ion-grid margin-left-0>
+                          <ion-row>
+                            <ion-col col-12 (click)= "navToMemoPage(i)">
+                                  <p>{{memo.memo.substr(0,35)}}...</p>
+                            </ion-col>
+                      </ion-row>
+                        </ion-grid>
+                    </ion-item>
+                    <ion-item-options side="right">
+                      <button ion-button icon-only clear (click)="removeMemo(i)">
+                        <ion-icon name="trash" color="danger" ></ion-icon>
+                      </button>
+                    </ion-item-options>
+                  </ion-item-sliding>
+            </ion-card-content>
+          </ion-card>
+  
+  </ion-list>
+</ion-content>
+

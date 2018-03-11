@@ -1,18 +1,17 @@
+<!--
+  Generated template for the FavPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
 <ion-header>
+
   <ion-navbar color="app">
-    <ion-title text-center>
-      {{appName}}
-    </ion-title>
-    <ion-buttons end>
-      <button ion-button (click)="addMemo()">
-        <ion-icon name="add-circle"></ion-icon>
-      </button>
-      <button ion-button (click)="navToFavPage()">
-          <ion-icon name="trophy"></ion-icon>
-        </button>
-    </ion-buttons>
+    <ion-title>Favorites</ion-title>
   </ion-navbar>
+
 </ion-header>
+
 
 <ion-content >
     <ion-fab left bottom small>
@@ -21,7 +20,7 @@
           </button>
       </ion-fab>
   <ion-list >
-      <ion-card margin-top *ngFor = "let memo of memos;let i = index" no-padding>
+      <ion-card margin-top *ngFor = "let memo of favs;let i = index" no-padding>
           <ion-card-header class="date-small" color="primary" (click)= "navToMemoPage(i)">
             <span float-left>{{memo.time}} </span>
             <span float-right>{{memo.date}}</span>
