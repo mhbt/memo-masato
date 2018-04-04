@@ -1,3 +1,12 @@
+/**
+ * @file - Registers everything that is needed to run application
+ * @global declaration
+ * @global imports
+ * @global bootstrap
+ * @global providers
+ * @desc Kick start ionic and angular functioning, register modules, components, services/provider and bootstrap entry components
+ * @exports AppModule
+ */
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
